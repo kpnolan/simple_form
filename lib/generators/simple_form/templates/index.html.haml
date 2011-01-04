@@ -1,0 +1,11 @@
+%h1 Listing <%= plural_name.titleize %>
+%table
+  %thead
+    %tr.heading
+<%- for attribute in attributes -%>
+      %th <%= attribute.name.titleize %>
+<% end -%>
+  %tbody
+    = render :partial => 'row', :collection => collection
+
+= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path

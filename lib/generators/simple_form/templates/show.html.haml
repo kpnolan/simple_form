@@ -1,0 +1,7 @@
+%h1 Viewing <%= singular_table_name %>
+
+= render 'form'
+
+= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
+\|
+= link_to 'Back', <%= index_helper %>_path
