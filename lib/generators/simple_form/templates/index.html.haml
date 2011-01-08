@@ -6,6 +6,6 @@
       %th <%= attribute.name.titleize %>
 <% end -%>
   %tbody
-    = render :partial => 'row', :collection => collection
+    = render :partial => 'row', :collection => collection, :as => :<%= singular_value_name %>
 
 = link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path

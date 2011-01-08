@@ -16,7 +16,7 @@ module SimpleForm
       include SimpleForm::Components::Wrapper
 
       attr_reader :attribute_name, :column, :input_type, :reflection,
-                  :options, :input_html_options
+                  :options, :input_html_options, :builder
 
       delegate :template, :object, :object_name, :to => :@builder
 
@@ -114,7 +114,7 @@ module SimpleForm
       end
 
       def disabled?
-        options[:disabled]
+         options[:disabled] || builder.options[:disabled]
       end
 
       # Lookup translations for the given namespace using I18n, based on object name,

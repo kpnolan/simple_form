@@ -1,7 +1,14 @@
-%h1 Viewing <%= singular_table_name %>
+%h1 Viewing <%= singular_table_name.titleize %>
 
-= render 'form'
+= simple_form_for(@<%= singular_name %>) do |f|
+
+  .inputs
+  <%- attributes.each do |attribute| -%>
+    = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>
+  <%- end -%>
 
 = link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
 \|
 = link_to 'Back', <%= index_helper %>_path
+
+

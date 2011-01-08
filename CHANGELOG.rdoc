@@ -1,3 +1,12 @@
+== 1.4.0
+* enhancements
+  * completely rewrorked the way index.html files are handled. Now, the call a partial "_row", which just prints a single row in the passed
+    collection. The only embedded styling is the old faithful even/odd line class name insertion which can be used for style or not.
+    The native SimpleForm inherited the show form and the index form for Rails, which IMHO, left much to be desired.
+  * Additionally, the "show" form was elevated to the same position as the edit form, save for all of the fields are disabled. Default show forms
+    from Rails as well left much to be desired and offered little chances for styling. Since the "show" page is inherently the same a s the edit page
+    except that it's readonly and therefore do not have an submit button, there's not sense to invent another form
+
 * bug fix
   * Only add the "required" HTML 5 attribute for valid inputs, disable in selects (not allowed)
   * Fix error when using hints without an attribute (by github.com/butsjoh and github.com/rafaelfranca)

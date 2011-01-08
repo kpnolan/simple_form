@@ -35,6 +35,7 @@ module SimpleForm
           def simple_#{helper}(record_or_name_or_array, *args, &block)
             options = args.extract_options!
             options[:builder] = SimpleForm::FormBuilder
+            options[:disabled] = params['action'] == 'show'
             css_class = case record_or_name_or_array
               when String, Symbol then record_or_name_or_array.to_s
               when Array then dom_class(record_or_name_or_array.last)

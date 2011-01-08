@@ -3,7 +3,6 @@
   %td.<%= attribute.name %>
   <%- if attribute.reference? -%>
     = attribute.association.name
-    -#= lkup <%= singular_name %>.<%= attribute.name.gsub(/_id$/,'') %>
   <%- else -%>
     = h <%= singular_name %>.<%= attribute.name %>
   <%- end -%>
